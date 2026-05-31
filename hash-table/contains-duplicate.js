@@ -3,17 +3,16 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    let numsCopy = [];
+    let numsSet = new Set();
 
-    for (let i=0;i<nums.length;i++){
-        console.log(numsCopy);
-        console.log(nums[i])
-        if (numsCopy.includes(nums[i])){
+    for (let i = 0; i < nums.length; i++) {
+        if (numsSet.has(nums[i])) {
             return true;
-        }else{
-            numsCopy.push(nums[i]);
-            console.log(numsCopy);
+        } else {
+            numsSet.add(nums[i]);
+            console.log(numsSet);
         }
     }
+
     return false;
 };
