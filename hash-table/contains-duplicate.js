@@ -10,7 +10,6 @@ var containsDuplicate = function(nums) {
             return true;
         } else {
             numsSet.add(nums[i]);
-            console.log(numsSet);
         }
     }
 
