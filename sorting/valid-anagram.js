@@ -15,10 +15,8 @@ var isAnagram = function(s, t) {
             map[letter] = 1;
         }
     }
-console.log(map)
     for (let i=0; i < s.length; i++){
         let letter = t[i];
-        console.log(letter)
         if (map[letter]){
             map[letter]--;
         }else{
