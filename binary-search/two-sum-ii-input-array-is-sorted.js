@@ -8,8 +8,6 @@ var twoSum = function(numbers, target) {
     let right = numbers.length - 1;
 
     while (left < right){
-        console.log(left);
-        console.log(right);
         if (numbers[left] + numbers[right] === target){
             return [left + 1, right + 1];
         }else if (numbers[left] + numbers[right] > target){
@@ -18,5 +16,4 @@ var twoSum = function(numbers, target) {
             left++;
         }
     }
-    return [left, right];
 };
