@@ -5,12 +5,10 @@
 var maxProfit = function(prices) {
     let curMin = prices[0];
     let curMax = 0;
-     // 7 0, 7 0 
     for (let i = 0; i < prices.length; i++){
         curMin = Math.min(prices[i], curMin);
         curMax = Math.max(curMax, prices[i] - curMin);
-        console.log(curMin);
-        console.log(curMax);
+
     }
     return curMax;
     
