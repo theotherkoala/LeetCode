@@ -16,6 +16,8 @@ var isValid = function(s) {
             stack.pop();
         } else if (char === ']' && stack.at(-1) === '[') {
             stack.pop();
+        }else{
+            return false;
         }
         }
     
