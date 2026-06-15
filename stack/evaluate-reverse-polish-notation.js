@@ -4,33 +4,23 @@
  */
 var evalRPN = function(tokens) {
     let stack = [];
+    
+    const ops = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '*': (a, b) => a * b,
+        '/': (a, b) => Math.trunc(a / b)
+    };
 
-    for (let i = 0; i < tokens.length; i++){
-        if (tokens[i] === '+' || tokens[i] === '-' || tokens[i] === '*' ||tokens[i] === '/'){
-            let num1 = stack.pop();
-            let num2 = stack.pop();
-            stack.push(calculator(num2, num1, tokens[i]));
-        }else{
-            stack.push(Number.parseInt(tokens[i]));
-            console.log(stack);
+    for (const token of tokens) {
+        if (token in ops) {
+            const b = stack.pop();
+            const a = stack.pop();
+            stack.push(ops[token](a, b));
+        } else {
+            stack.push(Number(token)); 
         }
-        
     }
 
-    return stack.at(-1);
+    return stack[0]; 
 };
-
-function calculator(num1, num2, operator) {
-    switch (operator) {
-        case '+':
-            return num1 + num2;
-        case '-':
-            return num1 - num2;
-        case '*':
-            return num1 * num2;
-        case '/':
-            return Math.trunc(num1 / num2);
-        default:
-            return "Invalid operator";
-    }
-}
