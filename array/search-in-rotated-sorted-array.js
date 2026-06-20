@@ -13,7 +13,7 @@ var search = function(nums, target) {
             return mid;
         }
 
-        if (nums[mid] > nums[left]){
+        if (nums[mid] >= nums[left]){
             if (target < nums[left] || target > nums[mid]){
                 left = mid + 1;
             }else{
