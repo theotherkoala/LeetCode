@@ -10,6 +10,7 @@
  * @return {void} Do not return anything, modify head in-place instead.
  */
 var reorderList = function(head) {
+    //1. find mid
     let slow = head;
     let fast = head;
 
@@ -20,6 +21,7 @@ var reorderList = function(head) {
     let curr = slow.next; 
     slow.next = null; 
 
+    //2. reverse second list
     let prev = null;
     while (curr){
         let temp = curr.next;
@@ -27,17 +29,16 @@ var reorderList = function(head) {
         prev= curr;
         curr = temp;       
     }
-    console.log(prev);
-
+    
+    //3. combined
     let first = head;
     let second = prev;
-    
     while (second) {
         let temp1 = first.next;
         let temp2 = second.next;
 
-        first.next = second;  // 1 -> 4
-        second.next = temp1;  // 4 -> 2
+        first.next = second; 
+        second.next = temp1;
 
         first = temp1;
         second = temp2;
