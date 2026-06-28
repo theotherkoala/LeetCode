@@ -11,34 +11,34 @@
  * @return {number[]}
  */
 var preorderTraversal = function(root) {
-    // let res = [];
-
-    // if (!root) return res;
-
-    // let stack = [root];
-    
-    // while (stack.length > 0){
-    //     let node = stack.pop();
-    //     res.push(node.val);
-
-    //     if (node.right){
-    //         stack.push(node.right);
-    //     }
-    //     if (node.left){
-    //         stack.push(node.left);
-    //     }
-    // }
-    // return res;
-
-    //recursive:
     let res = [];
 
-    function preorder(node){
-        if (!node) return [];
+    if (!root) return res;
+
+    let stack = [root];
+    
+    while (stack.length > 0){
+        let node = stack.pop();
         res.push(node.val);
-        preorder(node.left);
-        preorder(node.right);
+
+        if (node.right){
+            stack.push(node.right);
+        }
+        if (node.left){
+            stack.push(node.left);
+        }
     }
-    preorder(root);
     return res;
+
+    //recursive:
+    // let res = [];
+
+    // function preorder(node){
+    //     if (!node) return [];
+    //     res.push(node.val);
+    //     preorder(node.left);
+    //     preorder(node.right);
+    // }
+    // preorder(root);
+    // return res;
 };
