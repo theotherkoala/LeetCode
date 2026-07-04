@@ -14,8 +14,8 @@ var isBalanced = function(root) {
     if (!root) return true;
     let left = Height(root.left);
     let right = Height(root.right);
-    if (Math.abs(left - right) <= 1) return true;
-    return false;
+    return (Math.abs(left - right) <= 1 && isBalanced(root.left) &&
+        isBalanced(root.right));
 
 
 };
