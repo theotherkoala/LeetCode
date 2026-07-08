@@ -19,6 +19,5 @@ var minSubArrayLen = function(target, nums) {
             min = Math.min(min, i-left+1);
         }
     }
-    if (sum < target) return 0;
-    return min;
+    return sum < target ? 0 : min;
 };
