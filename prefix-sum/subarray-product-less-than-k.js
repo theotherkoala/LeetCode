@@ -4,7 +4,7 @@
  * @return {number}
  */
 var numSubarrayProductLessThanK = function(nums, k) {
-    if (k < 1) return 0;
+    if (k <= 1) return 0;
     let left = 0;
     let res = 0;
     let prod = 1;
