@@ -11,10 +11,10 @@ var numSubarrayProductLessThanK = function(nums, k) {
 
     for (let i = 0; i < nums.length; i++){
         prod *= nums[i];
-        while (prod > k]{
+        while (prod > k){
             prod /= nums[left];
             left++;
-        })
+        }
         res += i - left + 1;
     }
     return res;
